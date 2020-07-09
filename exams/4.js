@@ -13,7 +13,7 @@ async function execute() {
 module.exports = async function doTest() {
   try {
     // 此处写测试用例
-    return "通过";
+    throw new Error('删除此行，补上你的测试用例');
   } catch (ex) {
     return "不通过";
   }
