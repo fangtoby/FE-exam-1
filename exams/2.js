@@ -12,7 +12,7 @@ function findChildStr(str, n) {
 module.exports = function doTest() {
   try {
     assert.deepEqual(findChildStr('AAAAAAAABBAAAAAAAA', 8), ['AAAAAAAA']);
-    assert.deepEqual(findChildStr('AAACCCAAACCCAAA', 2), ['AA', 'AC', 'CC', 'CA']);
+    assert.deepEqual(findChildStr('AAACCCAAACCCAAA', 2).sort(), ['AA', 'AC', 'CC', 'CA'].sort());
     return "通过";
   } catch (ex) {
     return "不通过";
