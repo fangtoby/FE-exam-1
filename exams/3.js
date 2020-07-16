@@ -13,9 +13,9 @@ function reorganize(str) {
 /*******测试部分*******/
 module.exports = function doTest() {
   try {
-    assert.equal(reorganize('aabb'), ['abab', 'baba']);
-    assert.equal(reorganize('aaabbbb'), ['bababab']);
-    assert.equal(reorganize('1bbbbb'), []);
+    assert.deepEqual(reorganize('aabb').sort(), ['abab', 'baba']);
+    assert.deepEqual(reorganize('aaabbbb'), ['bababab']);
+    assert.deepEqual(reorganize('1bbbbb'), []);
     return "通过";
   } catch (ex) {
     return "不通过";
