@@ -3,9 +3,19 @@ const assert = require('chai').assert;
 const question = '找出一个字符串中，所有长度为 n，且出现超过 1 次的子串';
 
 function findChildStr(str, n) {
-  /**
-   * 此处写代码逻辑
-   */
+  var len = str.length;
+  var result = [];
+  if (len < n) {
+    return result;
+  }
+  for(let i = 0; i<len-n; i++) {
+    if(str.substring(i+n).indexOf(str.substr(i, n))>=0) {
+      if (!result.includes(str.substr(i, n))) {
+        result.push(str.substr(i, n));
+      }
+    }
+  }
+  return result;
 }
 
 /*******测试部分*******/

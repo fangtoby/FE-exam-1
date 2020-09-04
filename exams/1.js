@@ -5,16 +5,22 @@ const question = '给定一个自然数 n，算出 n 的阶乘，分别用递归
 // 阶乘: n！= n* (n-1) * ... * 5 * 4 * 3 * 2 * 1
 // 递归实现里，需要考虑 n 极大时的爆栈情况
 
-function recursion(n) {
-  /**
-   * 此处写递归实现
-   */
+function recursion(n, total = 1) {
+  if(n===1) {
+    return total;
+  }
+  return recursion(n-1, n*total);
+  // return n*arguments.callee(n-1);
 }
   
 function loop(n) {
-  /**
-   * 此处写循环实现
-   */
+  var result = n;
+  n = n -1;
+  while(n>0){
+    result = n * result;
+    n--;
+  }
+  return result;
 }
 
 /*******测试部分*******/
